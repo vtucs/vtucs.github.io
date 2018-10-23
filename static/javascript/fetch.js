@@ -9,7 +9,7 @@ xmlhttp.onreadystatechange = function () {
         let laboratoriesDiv = document.getElementById('laboratories-div');
         for (let i = 0; i < root.laboratories.length; i++) {
             let eachLabDiv = document.createElement('div');
-            styleDivAsList(eachLabDiv);
+            eachLabDiv.classList.add("tile-div");
             let lab = root.laboratories[i];
             let name = document.createTextNode(lab.name);
             eachLabDiv.appendChild(name);
@@ -38,7 +38,7 @@ function laboratoryClickHandler(lurl) {
                 // programDiv.style.backgroundColor = 'black';
                 // programDiv.style.borderRadius = '2px';
                 // programDiv.style.padding = '0.5em';
-                styleDivAsList(programDiv)
+                programDiv.classList.add("tile-div");
 
                 let prog = root.labExperiments[i];
                 for (let j = 0; j < prog.labExperimentSubParts.length; j++) {
@@ -83,10 +83,11 @@ function experimentClickHandler(eurl) {
     experimentXmlHttp.send();
 }
 
-function styleDivAsList(div) {
-    div.style.margin = '20px';
-    div.style.color = 'white';
-    div.style.backgroundColor = '#305D70';
-    div.style.borderRadius = '2px';
-    div.style.padding = '0.5em';
-}
+// function styleDivAsList(div) {
+//     div.style.margin = '20px';
+//     div.style.color = 'white';
+//     div.style.backgroundColor = '#305D70';
+//     div.style.borderRadius = '2px';
+//     div.style.padding = '0.5em';
+//     // div.classList.add("temp");
+// }
