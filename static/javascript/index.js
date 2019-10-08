@@ -7,28 +7,28 @@ xmlhttp.onreadystatechange = function () {
         let response = this.responseText;
         let root = JSON.parse(response);
         storeUrl("index", root);
-        renderHtmlElements(root.laboratories);
+        renderLaboratories(root.laboratories);
     }
 };
 xmlhttp.open("GET", iurl, true);
 xmlhttp.send();
 
-function renderHtmlElements(laboratories) {
+function renderLaboratories(laboratories) {
     let laboratoriesDiv = document.getElementById('laboratories-div');
     for (let i = 0; i < laboratories.length; i++) {
         let eachLabDiv = document.createElement('div');
         let lab = laboratories[i];
         let fileName = lab.fileName;
-        let name = fileName.split(".")[0].replace(/_/g, " ");
+        let name = formatLabName(fileName);
         let nameTextNode = document.createTextNode(name);
         eachLabDiv.appendChild(nameTextNode);
         eachLabDiv.addEventListener('click', function () {
-            laboratoryClickHandler("laboratory.html?lab=" + fileName);
+            itemClickHandler("laboratory.html?lab=" + fileName);
         });
         laboratoriesDiv.appendChild(eachLabDiv);
     }
 }
 
-function laboratoryClickHandler(lurl) {
-    window.location.href = lurl;
+function formatLabName(fileName) {
+    return fileName.split(".")[0].replace(/_/g, " ");
 }
