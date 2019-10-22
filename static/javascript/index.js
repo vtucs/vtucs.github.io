@@ -17,6 +17,7 @@ function renderLaboratories(laboratories) {
     let laboratoriesDiv = document.getElementById('laboratories-div');
     for (let i = 0; i < laboratories.length; i++) {
         let eachLabDiv = document.createElement('div');
+        formatListItem(eachLabDiv);
         let lab = laboratories[i];
         let fileName = lab.fileName;
         let name = formatLabName(fileName);

@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>VTU CS</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/commons.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
 </head>
 
 <body>
-    <div id="laboratories-div"></div>
+    <nav class="navbar sticky-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <div>
+                        <img src="static/logo/logo.png" width="48" height="48" class="d-inline-block" alt="">
+                        <div class="p-1 d-inline-block">VTU CS Laboratory Programs</div>
+                    </div>
+                </a>
+            </div>
+            <div class="float-right navbar-header">
+                <a class="navbar-brand" href="#">Repository</a>
+                <a class="navbar-brand" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+    <div id="laboratories-div" class="card list-group list-group-flush"></div>
     <script type="text/javascript" src="static/javascript/commons.js"></script>
     <script type="text/javascript" src="static/javascript/index.js"></script>
 </body>

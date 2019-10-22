@@ -21,7 +21,7 @@ if (urlParams.has("lab")) {
         xmlhttp.send();
     }
 } else {
-    console.log("No Lab Parameter");
+    redirectToHomepage();
 }
 
 function renderLabExperiments(labExperiments) {
