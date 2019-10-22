@@ -10,7 +10,3 @@ function redirectToHomepage() {
 function itemClickHandler(url) {
     window.location.href = url;
 }
-
-function formatListItem(item) {
-    item.classList.add("list-group-item");
-}

@@ -28,6 +28,7 @@ function renderLabExperiments(labExperiments) {
     let programsDiv = document.getElementById("programs-div");
     for (let i = 0; i < labExperiments.length; i++) {
         let experimentDiv = document.createElement("div");
+        formatListItem(experimentDiv);
         renderExperiment(experimentDiv, labExperiments[i]);
         programsDiv.appendChild(experimentDiv);
     }
@@ -58,6 +59,7 @@ function renderContentFile(contentFileDiv, contentFile) {
     contentFileDiv.addEventListener("click", function () {
         console.log("Click Detected");
     });
+    formatFileAction(contentFileDiv);
 }
 
 function formatFileName(fileName) {
@@ -65,4 +67,13 @@ function formatFileName(fileName) {
     if (parts.length > 2) {
         return parts[parts.length - 2].replace(/_/g, " ");
     }
+}
+
+function formatListItem(item) {
+    item.classList.add("list-group-item");
+    item.classList.add("program-list-item");
+}
+
+function formatFileAction(file) {
+    file.classList.add("list-group-item-action");
 }

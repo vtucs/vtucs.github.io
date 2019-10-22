@@ -33,3 +33,9 @@ function renderLaboratories(laboratories) {
 function formatLabName(fileName) {
     return fileName.split(".")[0].replace(/_/g, " ");
 }
+
+function formatListItem(item) {
+    item.classList.add("list-group-item");
+    item.classList.add("list-group-item-action");
+    item.classList.add("laboratory-list-item");
+}
