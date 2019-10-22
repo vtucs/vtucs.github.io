@@ -1,11 +1,12 @@
 var urlParams = new URLSearchParams(window.location.search);
+var labName="";
 
 if (urlParams.has("lab")) {
     var lurl = localStorage.getItem("index");
     if (lurl === null) {
         redirectToHomepage();
     } else {
-        let labName = urlParams.get("lab");
+        labName = urlParams.get("lab");
         lurl = lurl + "/" + labName;
         let xmlhttp = new XMLHttpRequest();
 
@@ -57,7 +58,7 @@ function renderContentFile(contentFileDiv, contentFile) {
     let nameTextNode = document.createTextNode(name);
     contentFileDiv.appendChild(nameTextNode);
     contentFileDiv.addEventListener("click", function () {
-        console.log("Click Detected");
+        itemClickHandler("program.html?lab=" + labName + "&prog=" + contentFile.fileName);
     });
     formatFileAction(contentFileDiv);
 }
